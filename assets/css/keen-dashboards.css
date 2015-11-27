@@ -78,6 +78,32 @@ body.application hr {
 }
 
 .weather-icon {
+  font-size: 1.5em;
+  font-weight: bold;
   width: 0;
   height: 0;
+}
+
+.rain {
+  color: #2166ac;
+}
+
+.drizzle {
+  color: #4393c3;
+}
+
+.sunny {
+  color: #fbd663;
+}
+
+.sleet {
+  color: #d1e5f0;
+}
+
+.snow {
+  color: #92c5de;
+}
+
+.default {
+  color: #333333;
 }
