@@ -4,6 +4,11 @@ const WeatherMarkers = {
     className: "weather-icon sleet"
   }),
 
+  "freezing-rain": L.divIcon({
+    html: '<i class="wi wi-rain"></i>',
+    className: "weather-icon rain"
+  }),
+
   "rain/ice pellets": L.divIcon({
     html: '<i class="wi wi-rain-mix"></i>',
     className: "weather-icon sleet"
@@ -35,7 +40,12 @@ const WeatherMarkers = {
   }),
 
   "wind-1": L.divIcon({
-    html: '<i class="wi wi-wind"></i>',
+    html: '<i class="wi wi-wind-beaufort-1"></i>',
+    className: "weather-icon drizzle"
+  }),
+
+  "wind-2": L.divIcon({
+    html: '<i class="wi wi-wind-beaufort-2"></i>',
     className: "weather-icon drizzle"
   }),
 
@@ -62,6 +72,11 @@ const WeatherMarkers = {
   hail: L.divIcon({
     html: '<i class="wi wi-hail"></i>',
     className: "weather-icon snow"
+  }),
+
+  "wind-1": L.divIcon({
+    html: '<i class="wi wi-wind"></i>',
+    className: "weather-icon wind"
   }),
 
   default: L.divIcon({

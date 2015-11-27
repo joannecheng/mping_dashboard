@@ -11,6 +11,7 @@
   <script type="text/javascript" src="assets/lib/jquery/dist/jquery.min.js"></script>
   <script type="text/javascript" src="assets/lib/bootstrap/dist/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="assets/lib/underscore.js"></script>
+  <script type="text/javascript" src="assets/lib/moment.js"></script>
 </head>
 <body class="application">
 
@@ -69,7 +70,19 @@
   </div>
 
   <div class="container-fluid">
-    <div class="col-md-12" id="mapbox-panel">
+    <div class="col-md-3" id="mping_table">
+      <div class="chart-wrapper">
+        <div class="chart-title">
+          mping Table
+        </div>
+        <div class="chart-stage">
+          <table>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-9" id="mapbox-panel">
       <div class="chart-wrapper">
         <div class="chart-title">
           Geo Status

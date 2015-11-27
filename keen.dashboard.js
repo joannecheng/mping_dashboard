@@ -21,6 +21,27 @@ function drawHour(map, weatherEvents, hour) {
     return ts.getUTCHours() == hour;
   });
   drawOnMap(map, items);
+  fillTable(items);
+}
+
+function fillTable(items) {
+  const table = $("#mping_table .chart-stage table");
+  table.html("<thead>" +
+      "<th>Timestamp</th>" +
+      "<th>Type</th>" +
+      "<th>Coordinates</th>" +
+      "<th></th>" +
+      "</thead>");
+  _.each(items, function(item) {
+    const measurement = item.weather.measurement ? item.weather.measurement + "in" : "";
+    const formattedDate = moment(item.keen.timestamp).format("M/D/YYYY H:mm:ss");
+    table.append("<tr> " +
+        "<td>"+formattedDate+"</td>" +
+        "<td>"+item.weather.type+"</td>" +
+        "<td>"+item.keen.location.coordinates+"</td>" +
+        "<td>"+measurement+"</td>" +
+        "</tr>");
+  });
 }
 
 function drawOnMap(map, items) {
