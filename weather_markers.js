@@ -44,6 +44,25 @@ const WeatherMarkers = {
     className: "weather-icon snow"
   }),
 
+  "dense fog": L.divIcon({
+    html: '<i class="wi wi-fog"></i>',
+    className: "weather-icon fog"
+  }),
+
+  "flood-1": L.divIcon({
+    html: '<i class="wi wi-flood"></i>',
+    className: "weather-icon flood"
+  }),
+
+  "flood-2": L.divIcon({
+    html: '<i class="wi wi-flood"></i>',
+    className: "weather-icon flood"
+  }),
+
+  hail: L.divIcon({
+    html: '<i class="wi wi-hail"></i>',
+    className: "weather-icon snow"
+  }),
 
   default: L.divIcon({
     html: '<i class="wi wi-moon-full"></i>',
