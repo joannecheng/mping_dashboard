@@ -3,7 +3,7 @@
 const DEFAULTS = {
   coordinates: {
     lat: 39.73350,
-    lng: -104.9902
+    lng: -98.2
   },
   zoom: 4
 };
