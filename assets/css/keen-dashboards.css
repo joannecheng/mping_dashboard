@@ -77,13 +77,6 @@ body.application hr {
   padding: 8px 10px 5px;
 }
 
-.weather-icon {
-  font-size: 1.25em;
-  font-weight: bold;
-  width: 0px;
-  height: 0px;
-}
-
 .rain {
   color: #2166ac;
 }

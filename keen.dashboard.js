@@ -47,8 +47,13 @@ function fillTable(items) {
 function drawOnMap(map, items) {
   _.each(items, function(item) {
     const coords = item.keen.location.coordinates;
-    L.marker(new L.LatLng(coords[1], coords[0]), {
-      icon: WeatherMarkers[item.weather.type] || WeatherMarkers.default,
+    const type = item.weather.type;
+    L.circleMarker(new L.LatLng(coords[1], coords[0]), {
+      radius: 4,
+      weight: 1,
+      fillOpacity: 0.5,
+      color: "#444",
+      fillColor: window.WeatherColors[type] || window.WeatherColors.default
     }).addTo(map);
   });
 }
