@@ -77,26 +77,52 @@ body.application hr {
   padding: 8px 10px 5px;
 }
 
-.rain {
-  color: #2166ac;
+.dust { }
+.mudslide { }
+.none { fill: rgb(240, 200, 8); }
+
+.fog { fill: #fa9fb5; }
+.dense-fog { fill: #f768a1; }
+
+/* blueish green */
+.drizzle { fill: #7bccc4; }
+.freezing-drizzle { fill: #4eb3d3; }
+
+/* blue */
+.rain { fill: #4292c6; }
+.freezing-rain { fill: #08519c; }
+
+/* purpley */
+.snow { fill: #54278f; }
+.wet-snow { fill: #045a8d; }
+.ice-pellets { fill: #02818a }
+.ice-pellets-snow { #88419d; }
+.rain-snow { fill: #0570b0; }
+.rain-ice-pellets { fill: #3690c0; }
+
+/* wind - green */
+.wind, .wind-1 { fill: #a1d99b; }
+.wind-2 { fill: #74c476; }
+.wind-3 { fill: #41ab5d; }
+.wind-4 { fill: #238b45; }
+.wind-5 { fill: #006d2c; }
+
+/* flood - red*/
+.flood-1 { fill: #fc9272; }
+.flood-2 { fill: #fb6a4a; }
+.flood-3 { fill: #ef3b2c; }
+.flood-4 { fill: #cb181d; }
+
+.hail { fill: #4d004b; }
+.graupel { fill: #810f7c; }
+
+svg.weather-circle-icon {
+  height: 9px;
+  width: 9px;
 }
 
-.drizzle {
-  color: #4393c3;
-}
-
-.sunny {
-  color: rgb(240, 200, 8);
-}
-
-.sleet {
-  color: #d1e5f0;
-}
-
-.snow {
-  color: #92c5de;
-}
-
-.default {
-  color: #333333;
+circle.weather-circle-icon {
+  fill-opacity: 0.8;
+  stroke: #444;
+  align: center;
 }

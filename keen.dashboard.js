@@ -18,7 +18,7 @@ function drawHour(map, weatherEvents, hour) {
   $(".hour-selector-label").text(hour + "-" + (hour+1));
   const items = _.select(weatherEvents, function(weatherEvent) {
     const ts = new Date(weatherEvent.keen.timestamp);
-    return ts.getUTCHours() == hour;
+    return ts.getUTCHours() == hour && weatherEvent.weather.type != "test";
   });
   drawOnMap(map, items);
   fillTable(items);
@@ -34,10 +34,15 @@ function fillTable(items) {
       "</thead>");
   _.each(items, function(item) {
     const measurement = item.weather.measurement ? item.weather.measurement + "in" : "";
+    const className = item.weather.type.replace(/\s+|\W+/g, '-');
     const formattedDate = moment(item.keen.timestamp).format("M/D/YYYY H:mm:ss");
+    const svgCircle = `<svg class="weather-circle-icon">
+      <circle class="weather-circle-icon ${className}" cx="4.5" cy="4.5" r="4" />
+      </svg>`;
+
     table.append("<tr> " +
         "<td>"+formattedDate+"</td>" +
-        "<td>"+item.weather.type+"</td>" +
+        "<td>"+svgCircle+item.weather.type+"</td>" +
         "<td>"+item.keen.location.coordinates+"</td>" +
         "<td>"+measurement+"</td>" +
         "</tr>");
@@ -48,12 +53,13 @@ function drawOnMap(map, items) {
   _.each(items, function(item) {
     const coords = item.keen.location.coordinates;
     const type = item.weather.type;
+    const className = item.weather.type.replace(/\s+|\W+/g, '-');
     L.circleMarker(new L.LatLng(coords[1], coords[0]), {
-      radius: 4,
+      radius: 5,
       weight: 1,
       fillOpacity: 0.5,
       color: "#444",
-      fillColor: window.WeatherColors[type] || window.WeatherColors.default
+      className: className
     }).addTo(map);
   });
 }
