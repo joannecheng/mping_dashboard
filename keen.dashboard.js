@@ -13,7 +13,7 @@ const geoProject = new Keen({
 });
 
 function drawHour(map, weatherEvents, hour) {
-  const labelDate = new Date("2015-11-16T00:00:00.000Z");
+  const labelDate = new Date("2015-11-17T00:00:00.000Z");
   labelDate.setUTCHours(hour);
   $(".hour-selector-label").text(hour + "-" + (hour+1));
   const items = _.select(weatherEvents, function(weatherEvent) {
@@ -57,7 +57,7 @@ function drawOnMap(map, items) {
     L.circleMarker(new L.LatLng(coords[1], coords[0]), {
       radius: 5,
       weight: 1,
-      fillOpacity: 0.5,
+      fillOpacity: 0.7,
       color: "#444",
       className: className
     }).addTo(map);
@@ -86,8 +86,8 @@ Keen.ready(function(){
   var mpingObs = new Keen.Query("extraction", {
     eventCollection: "mping_observations",
     timeframe: {
-      start: "Tue, 16 Nov 2015 00:00:00 GMT",
-      end: "Tue, 16 Nov 2015 23:59:59 GMT"
+      start: "Wed, 17 Nov 2015 00:00:00 GMT",
+      end: "Wed, 17 Nov 2015 23:59:59 GMT"
     },
     targetProperty: "keen.location.coordinates"
   });
